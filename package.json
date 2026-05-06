@@ -1,0 +1,45 @@
+{
+  "name": "@cisohub/shared-auth",
+  "version": "1.0.0",
+  "description": "Shared authentication package for CISO Hub apps (Comply, Command, Defend, Aware) — dual-mode (passport/keycloak) with Client Roles + DI.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ../../node_modules/typescript/bin/tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "jose": "^5.10.0"
+  },
+  "peerDependencies": {
+    "express": "^5.0.0",
+    "express-session": "^1.18.0",
+    "passport": "^0.7.0",
+    "openid-client": "^5.7.1",
+    "drizzle-orm": "^0.39.3",
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "vitest": "^4.1.2",
+    "openid-client": "^5.7.1",
+    "drizzle-orm": "^0.39.3",
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.0",
+    "@types/node": "^20.0.0",
+    "@types/passport": "^1.0.16"
+  }
+}
